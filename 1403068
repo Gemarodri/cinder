@@ -1,0 +1,144 @@
+{
+Launchpad: https://bugs.launchpad.net/bugs/1403068,
+Id: 1403068,
+Title: Tests fail with python 2.7.9,
+Description: Tests that require SSL fail on python 2.7.9 due to the change in python uses SSL certificates.
+
+
+======================================================================
+FAIL: cinder.tests.test_wsgi.TestWSGIServer.test_app_using_ipv6_and_ssl
+cinder.tests.test_wsgi.TestWSGIServer.test_app_using_ipv6_and_ssl
+----------------------------------------------------------------------
+_StringException: Traceback (most recent call last):
+  File "/tmp/buildd/cinder-2014.2/cinder/tests/test_wsgi.py", line 237, in test_app_using_ipv6_and_ssl
+    response = open_no_proxy('https://[::1]:%d/' % server.port)
+  File "/tmp/buildd/cinder-2014.2/cinder/tests/test_wsgi.py", line 47, in open_no_proxy
+    return opener.open(*args, **kwargs)
+  File "/usr/lib/python2.7/urllib2.py", line 431, in open
+    response = self._open(req, data)
+  File "/usr/lib/python2.7/urllib2.py", line 449, in _open
+    '_open', req)
+  File "/usr/lib/python2.7/urllib2.py", line 409, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python2.7/urllib2.py", line 1240, in https_open
+    context=self._context)
+  File "/usr/lib/python2.7/urllib2.py", line 1197, in do_open
+    raise URLError(err)
+URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:581)>
+Traceback (most recent call last):
+_StringException: Empty attachments:
+  stderr
+  stdout
+
+Traceback (most recent call last):
+  File "/tmp/buildd/cinder-2014.2/cinder/tests/test_wsgi.py", line 237, in test_app_using_ipv6_and_ssl
+    response = open_no_proxy('https://[::1]:%d/' % server.port)
+  File "/tmp/buildd/cinder-2014.2/cinder/tests/test_wsgi.py", line 47, in open_no_proxy
+    return opener.open(*args, **kwargs)
+  File "/usr/lib/python2.7/urllib2.py", line 431, in open
+    response = self._open(req, data)
+  File "/usr/lib/python2.7/urllib2.py", line 449, in _open
+    '_open', req)
+  File "/usr/lib/python2.7/urllib2.py", line 409, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python2.7/urllib2.py", line 1240, in https_open
+    context=self._context)
+  File "/usr/lib/python2.7/urllib2.py", line 1197, in do_open
+    raise URLError(err)
+URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:581)>
+
+Traceback (most recent call last):
+_StringException: Empty attachments:
+  stderr
+  stdout
+
+Traceback (most recent call last):
+  File "/tmp/buildd/cinder-2014.2/cinder/tests/test_wsgi.py", line 237, in test_app_using_ipv6_and_ssl
+    response = open_no_proxy('https://[::1]:%d/' % server.port)
+  File "/tmp/buildd/cinder-2014.2/cinder/tests/test_wsgi.py", line 47, in open_no_proxy
+    return opener.open(*args, **kwargs)
+  File "/usr/lib/python2.7/urllib2.py", line 431, in open
+    response = self._open(req, data)
+  File "/usr/lib/python2.7/urllib2.py", line 449, in _open
+    '_open', req)
+  File "/usr/lib/python2.7/urllib2.py", line 409, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python2.7/urllib2.py", line 1240, in https_open
+    context=self._context)
+  File "/usr/lib/python2.7/urllib2.py", line 1197, in do_open
+    raise URLError(err)
+URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:581)>
+
+
+======================================================================
+FAIL: cinder.tests.test_wsgi.TestWSGIServer.test_app_using_ssl
+cinder.tests.test_wsgi.TestWSGIServer.test_app_using_ssl
+----------------------------------------------------------------------
+_StringException: Traceback (most recent call last):
+  File "/tmp/buildd/cinder-2014.2/cinder/tests/test_wsgi.py", line 212, in test_app_using_ssl
+    response = open_no_proxy('https://127.0.0.1:%d/' % server.port)
+  File "/tmp/buildd/cinder-2014.2/cinder/tests/test_wsgi.py", line 47, in open_no_proxy
+    return opener.open(*args, **kwargs)
+  File "/usr/lib/python2.7/urllib2.py", line 431, in open
+    response = self._open(req, data)
+  File "/usr/lib/python2.7/urllib2.py", line 449, in _open
+    '_open', req)
+  File "/usr/lib/python2.7/urllib2.py", line 409, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python2.7/urllib2.py", line 1240, in https_open
+    context=self._context)
+  File "/usr/lib/python2.7/urllib2.py", line 1197, in do_open
+    raise URLError(err)
+URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:581)>
+Traceback (most recent call last):
+_StringException: Empty attachments:
+  stderr
+  stdout
+
+Traceback (most recent call last):
+  File "/tmp/buildd/cinder-2014.2/cinder/tests/test_wsgi.py", line 212, in test_app_using_ssl
+    response = open_no_proxy('https://127.0.0.1:%d/' % server.port)
+  File "/tmp/buildd/cinder-2014.2/cinder/tests/test_wsgi.py", line 47, in open_no_proxy
+    return opener.open(*args, **kwargs)
+  File "/usr/lib/python2.7/urllib2.py", line 431, in open
+    response = self._open(req, data)
+  File "/usr/lib/python2.7/urllib2.py", line 449, in _open
+    '_open', req)
+  File "/usr/lib/python2.7/urllib2.py", line 409, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python2.7/urllib2.py", line 1240, in https_open
+    context=self._context)
+  File "/usr/lib/python2.7/urllib2.py", line 1197, in do_open
+    raise URLError(err)
+URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:581)>
+
+Traceback (most recent call last):
+_StringException: Empty attachments:
+  stderr
+  stdout
+
+Traceback (most recent call last):
+  File "/tmp/buildd/cinder-2014.2/cinder/tests/test_wsgi.py", line 212, in test_app_using_ssl
+    response = open_no_proxy('https://127.0.0.1:%d/' % server.port)
+  File "/tmp/buildd/cinder-2014.2/cinder/tests/test_wsgi.py", line 47, in open_no_proxy
+    return opener.open(*args, **kwargs)
+  File "/usr/lib/python2.7/urllib2.py", line 431, in open
+    response = self._open(req, data)
+  File "/usr/lib/python2.7/urllib2.py", line 449, in _open
+    '_open', req)
+  File "/usr/lib/python2.7/urllib2.py", line 409, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python2.7/urllib2.py", line 1240, in https_open
+    context=self._context)
+  File "/usr/lib/python2.7/urllib2.py", line 1197, in do_open
+    raise URLError(err)
+URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:581)>,
+Gerrit: https://review.openstack.org/147271,
+IdGerrit: 147271,
+IdCommit: 4e849ef5fbb7159276435ac6f7315bf20274768d,
+DescriptionCommit: undefined,
+Files: ,
+Lines Inserted: 0,
+Lines Deleted: 0,
+CommitParent: undefined,
+}
