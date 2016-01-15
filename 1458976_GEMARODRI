@@ -1,6 +1,6 @@
 {
   "Launchpad": "https://bugs.launchpad.net/bugs/1458976",
-  "Id": "",
+  "Id": "1458976",
   "Gerrit": "https://review.openstack.org/185764",
   "IdGerrit": "185764",
   "IdCommit": "75953752e41819b0d2ca770d4d13ed1ccaec685a",
